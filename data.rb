@@ -53,6 +53,7 @@ category 'python' do
     topic 'if'
     topic 'while'
     topic 'for'
+    topic 'recursion'
 
     category 'exceptions' do
       topic 'raise'
