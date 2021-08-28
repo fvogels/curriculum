@@ -411,4 +411,6 @@ category 'python' do
     topic 'linear functions'
     topic 'matrices'
   end
+
+  topic 'code reading'
 end
