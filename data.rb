@@ -381,6 +381,7 @@ category 'python' do
   category 'versioning' do
     topic 'git flow'
     topic 'how git works'
+    topic '.gitignore'
 
     category 'git commands' do
       topic 'init'
