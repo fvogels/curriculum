@@ -414,4 +414,6 @@ category 'python' do
   end
 
   topic 'code reading'
+  topic 'logging'
+  topic 'profiling'
 end
