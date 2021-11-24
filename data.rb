@@ -255,10 +255,16 @@ category 'python' do
   category 'generators' do
     topic 'yield'
     topic 'yield from'
+    topic 'send'
   end
 
   topic 'decorators'
-  topic 'context managers'
+
+  category 'context managers' do
+    topic 'with ... as'
+    topic 'context managers'
+  end
+
   topic 'async/await'
 
   category 'regular expressions' do
@@ -276,7 +282,6 @@ category 'python' do
   category 'IO' do
     topic 'opening files'
     topic 'closing files'
-    topic 'with ... as'
     topic 'reading files'
     topic 'writing files'
     topic 'listing files'
@@ -357,6 +362,7 @@ category 'python' do
       topic 'octal'
       topic 'hexadecimal'
       topic 'base64'
+      topic 'converting between two representations'
     end
 
     category 'string encodings' do
@@ -376,6 +382,7 @@ category 'python' do
   category 'efficient code' do
     topic 'picking right container'
     topic 'avoid duplicate computations'
+    topic 'efficient algorithms'
   end
 
   category 'versioning' do
@@ -407,7 +414,7 @@ category 'python' do
   end
 
   category 'math' do
-    topic 'O(n)'
+    topic 'O(...)'
     topic 'logic'
     topic 'linear functions'
     topic 'matrices'
