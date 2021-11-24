@@ -291,6 +291,7 @@ category 'python' do
       topic 'csv'
       topic 'xml'
       topic 'json'
+      topci 'yaml'
     end
   end
 
