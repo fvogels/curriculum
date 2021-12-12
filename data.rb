@@ -75,6 +75,9 @@ topic 'general programming' do
       topic 'advantages of stateless programming'
     end
 
+    topic 'assertions'
+    topic 'logging'
+
     topic 'reading the error message'
     topic 'finding bugs in given code'
 
@@ -125,6 +128,8 @@ topic 'general programming' do
     topic 'constructors'
     topic 'destructors'
 
+    topic 'static members'
+
     topic 'subtype polymorphism' do
       topic 'virtual methods'
       topic 'abstract methods'
@@ -158,11 +163,18 @@ topic 'general programming' do
       topic 'iterator'
       topic 'null object'
       topic 'strategy'
+      topic 'state'
       topic 'dependency injection'
     end
 
     topic 'refactoring' do
       topic 'regression testing'
+    end
+
+    topic 'contracts' do
+      topic 'pre- and postconditions'
+      topic 'invariants'
+      topic 'liskov'
     end
   end
 
@@ -170,6 +182,7 @@ topic 'general programming' do
     topic 'threads'
     topic 'green threads'
     topic 'memory model'
+    topic 'volatile variables'
 
     topic 'synchronization' do
       topic 'locks'
@@ -297,7 +310,7 @@ topic 'python' do
     end
   end
 
-  topic 'operators' do
+  topic 'expressions' do
     topic 'arithmetic' do
       topic '+'
       topic '-'
@@ -322,6 +335,7 @@ topic 'python' do
       topic '&&'
       topic '||'
       topic '!'
+      topic 'short circuiting'
     end
 
     topic 'bitwise' do
@@ -332,10 +346,12 @@ topic 'python' do
       topic '<<'
       topic '>>'
     end
+
+    topic 'if expression'
   end
 
   topic 'control flow' do
-    topic 'if'
+    topic 'if statement'
     topic 'while'
     topic 'for'
     topic 'recursion'
@@ -539,6 +555,15 @@ topic 'python' do
     end
   end
 
+  topic 'functional programming' do
+    topic 'statelessness'
+    topic 'lambdas'
+    topic 'map'
+    topic 'filter'
+    topic 'reduce'
+    topic 'functools'
+  end
+
   topic 'static typing' do
     topic 'parameter types'
     topic 'return types'
@@ -551,6 +576,7 @@ topic 'python' do
       topic 'yield'
       topic 'yield from'
       topic 'send'
+      topic 'itertools'
     end
 
     topic 'coroutines' do
@@ -758,60 +784,68 @@ topic 'typescript' do
 end
 
 topic 'version control' do
-  topic 'how git works'
-  topic '.gitignore'
+  topic 'git' do
+    topic 'how git works'
+    topic '.gitignore'
 
-  topic 'git commands' do
-    topic 'config'
+    topic 'git commands' do
+      topic 'config'
 
-    topic 'init' do
-      topic 'bare'
-    end
+      topic 'init' do
+        topic 'bare'
+      end
 
-    topic 'clone'
-    topic 'add'
-    topic 'commit'
-    topic 'status'
-    topic 'log'
-    topic 'diff'
-    topic 'fetch'
-    topic 'pull'
-    topic 'push'
-    topic 'checkout'
-    topic 'reset' do
-      topic 'soft'
-      topic 'mixed'
-      topic 'hard'
-    end
-    topic 'branch'
-    topic 'merge'
-    topic 'clean'
-    topic 'rebase'
-    topic 'revert'
-    topic 'remote' do
+      topic 'clone'
       topic 'add'
-      topic 'remove'
-      topic 'set-url'
+      topic 'commit'
+      topic 'status'
+      topic 'log'
+      topic 'diff'
+      topic 'fetch'
+      topic 'pull'
+      topic 'push'
+      topic 'checkout'
+      topic 'reset' do
+        topic 'soft'
+        topic 'mixed'
+        topic 'hard'
+      end
+      topic 'branch'
+      topic 'merge'
+      topic 'clean'
+      topic 'rebase'
+      topic 'revert'
+      topic 'remote' do
+        topic 'add'
+        topic 'remove'
+        topic 'set-url'
+      end
+      topic 'stash'
+      topic 'tag'
+      topic 'worktree'
+      topic 'bisect'
+      topic 'reflog'
+      topic 'notes'
     end
-    topic 'stash'
-    topic 'tag'
-    topic 'worktree'
-    topic 'bisect'
-    topic 'reflog'
-    topic 'notes'
+
+    topic 'merge conflicts'
+
+    topic 'hooks'
+
+    topic 'GitHub' do
+      topic 'pull requests'
+    end
+
+    topic 'git flow'
   end
 
-  topic 'merge conflicts'
-
-  topic 'hooks'
-
-  topic 'GitHub' do
+  topic 'github' do
     topic 'pull requests'
+    topic 'releases'
+    topic 'issues'
+    topic 'actions'
   end
-
-  topic 'git flow'
 end
-
 
 topic 'shell' do
   topic 'standard streams' do
@@ -861,13 +895,8 @@ topic 'shell' do
   end
 end
 
-topic 'logging'
-
 topic 'testing' do
-  topic 'unit testing' do
-
-  end
-
+  topic 'unit testing'
   topic 'acceptance testing'
   topic 'integration testing'
   topic 'black box vs white box'
