@@ -1,4 +1,8 @@
 topic 'general programming' do
+  topic 'differences between languages'
+  topic 'interpreters vs compilers'
+  topic 'turing completeness'
+
   topic 'identity vs value equality'
 
   topic 'code editor' do
@@ -7,30 +11,34 @@ topic 'general programming' do
     topic 'useful shortcuts'
   end
 
-  topic 'background information' do
-    topic 'building abstractions on top of bits'
-    topic 'interpreters vs compilers'
-    topic 'machine language'
-    topic 'assembly'
-    topic 'differences between languages'
-    topic 'turing completeness'
+  topic 'memory layout' do
+    topic 'static allocation'
+    topic 'stack allocation'
+    topic 'heap allocation' do
+      topic 'manual deallocation'
+      topic 'garbage collection'
+    end
   end
 
   topic 'execution' do
     topic 'strict evaluation order'
-    topic 'value vs references'
+    topic 'values vs references'
+    topic 'stack'
   end
 
   topic 'functions' do
     topic 'parameters'
     topic 'local variables'
     topic 'returning'
+    topic 'scopes'
+    topic 'overloading'
   end
 
   topic 'exceptions' do
     topic 'throwing exceptions'
     topic 'catching exceptions'
     topic 'defining exceptions'
+    topic 'when to use exceptions'
   end
 
   topic 'coding standards' do
@@ -38,6 +46,188 @@ topic 'general programming' do
     topic 'linters'
     topic 'descriptive naming'
     topic 'split into functions'
+  end
+
+  topic 'regular expressions' do
+    topic 'literals'
+    topic '?'
+    topic '*'
+    topic '+'
+    topic '{m,n}'
+    topic '|'
+    topic 'character class []'
+    topic 'capturing ( )'
+    topic 'backreferences \k'
+    topic '$'
+    topic '^'
+    topic 'using reference'
+  end
+
+  topic 'troubleshooting' do
+    topic 'debugging' do
+      topic 'step into'
+      topic 'step over'
+      topic 'breakpoints' do
+        topic 'conditional breakpoints'
+      end
+      topic 'call stack'
+      topic 'watch'
+      topic 'advantages of stateless programming'
+    end
+
+    topic 'reading the error message'
+    topic 'finding bugs in given code'
+
+    topic 'writing clear bug reports' do
+      topic 'reducing code to minimum'
+      topic 'how to reproduce'
+      topic 'expected vs actual result'
+      topic "what's already been tried"
+    end
+  end
+
+  topic 'typing' do
+    topic 'static vs dynamic typing'
+    topic 'static vs dynamic type'
+
+    topic 'type polymorphism' do
+      topic 'using'
+
+      topic 'defining' do
+        topic 'bounds'
+        topic 'covariance/contravariance'
+      end
+    end
+
+    topic 'subtype polymorphism' do
+      topic 'inheritance'
+      topic 'interface'
+      topic 'composition vs inheritance'
+    end
+  end
+
+  topic 'functional programming' do
+    topic 'first class functions'
+    topic 'immutability'
+
+    topic 'higher order functions' do
+      topic 'map'
+      topic 'filter'
+      topic 'reduce'
+      topic 'cache'
+    end
+  end
+
+  topic 'object oriented programming' do
+    topic 'classes vs objects'
+    topic 'encapsulation'
+
+    topic 'constructors'
+    topic 'destructors'
+
+    topic 'subtype polymorphism' do
+      topic 'virtual methods'
+      topic 'abstract methods'
+      topic 'overriding'
+      topic 'inheritance'
+      topic 'interface'
+      topic 'composition vs inheritance'
+    end
+
+    topic 'access modifiers' do
+      topic 'public'
+      topic 'protected'
+      topic 'private'
+    end
+
+    topic 'typing' do
+      topic 'upcast/downcast'
+    end
+
+    topic 'design patterns' do
+      topic 'abstract factory'
+      topic 'static factory method'
+      topic 'lazy initialization'
+      topic 'observer'
+      topic 'builder'
+      topic 'composite'
+      topic 'decorator'
+      topic 'facade'
+      topic 'proxy'
+      topic 'command'
+      topic 'iterator'
+      topic 'null object'
+      topic 'strategy'
+      topic 'dependency injection'
+    end
+
+    topic 'refactoring' do
+      topic 'regression testing'
+    end
+  end
+
+  topic 'concurrency' do
+    topic 'threads'
+    topic 'green threads'
+    topic 'memory model'
+
+    topic 'synchronization' do
+      topic 'locks'
+      topic 'condition variables'
+      topic 'semaphores'
+    end
+
+    topic 'csp model'
+    topic 'actors model'
+    topic 'software transactional memory'
+  end
+
+  topic 'English terminology'
+end
+
+topic 'fundamentals' do
+  topic 'encoding' do
+    topic 'string encodings' do
+      topic 'ascii'
+      topic 'unicode'
+    end
+
+    type 'byte order' do
+      topic 'little vs big endian'
+      topic 'byte order marker'
+    end
+
+    topic 'files' do
+      topic 'binary vs text'
+    end
+  end
+
+  topic 'numbers' do
+    topic 'integers' do
+      topic 'signed vs unsigned'
+      topic '8/16/32/64 bit'
+      topic 'bignums'
+    end
+
+    topic 'fixed point'
+
+    topic 'floating point' do
+      topic '32/64 bit'
+    end
+  end
+
+  topic 'paths' do
+    topic 'absolute paths'
+    topic 'relative paths'
+  end
+
+  topic 'building abstractions on top of bits'
+
+  topic 'machine language'
+  topic 'assembly' do
+    topic 'registers'
+    topic 'instructions'
+    topic 'stack frames'
   end
 end
 
@@ -49,10 +239,27 @@ topic 'data structures' do
   topic 'set'
   topic 'map'
   topic 'tuples'
+  topic 'graphs'
 
   topic 'hashing'
 
-  topic 'selecting data structures'
+  topic 'selecting right data structures'
+end
+
+topic 'algorithms' do
+  topic 'searches' do
+    topic 'linear'
+    topic 'binary'
+  end
+
+  topic 'sorting'
+
+  topic 'graphs' do
+    topic 'breadth first'
+    topic 'depth first'
+    topic 'dijkstra'
+    topic 'a*'
+  end
 end
 
 topic 'general skills' do
@@ -62,6 +269,7 @@ end
 
 topic 'random number generation' do
   topic 'pRNG'
+  topic 'seed'
 end
 
 topic 'python' do
@@ -117,6 +325,7 @@ topic 'python' do
     end
 
     topic 'bitwise' do
+      topic '^'
       topic '&'
       topic '|'
       topic '~'
@@ -139,16 +348,20 @@ topic 'python' do
   end
 
   topic 'basic values types' do
+    topic 'bool' do
+      topic 'falsey/truthy'
+    end
     topic 'integers'
     topic 'fractions'
     topic 'floating point numbers'
-    topic 'booleans'
+    topic 'complex numbers'
     topic 'None'
 
     topic 'strings' do
       topic 'raw strings literals'
       topic 'interpolated strings literals'
       topic 'multiline strings literals'
+      topic 'ord/chr'
     end
 
     topic 'bytes'
@@ -179,9 +392,11 @@ topic 'python' do
     end
 
     topic 'defining' do
-      topic 'local variables'
-      topic 'nonlocal variables'
-      topic 'global variables'
+      topic 'scopes' do
+        topic 'local variables'
+        topic 'nonlocal variables'
+        topic 'global variables'
+      end
       topic 'returning'
       topic 'nested functions'
     end
@@ -194,10 +409,6 @@ topic 'python' do
     topic 'reverse/reversed'
     topic 'sort/sorted'
     topic 'sort/sorted key'
-
-    topic 'bool' do
-      topic 'falsey/truthy'
-    end
 
     topic 'lists' do
       topic 'literals'
@@ -328,18 +539,6 @@ topic 'python' do
     end
   end
 
-  topic 'functional programming' do
-    topic 'first class functions'
-    topic 'immutability'
-
-    topic 'higher order functions' do
-      topic 'map'
-      topic 'filter'
-      topic 'reduce'
-      topic 'cache'
-    end
-  end
-
   topic 'static typing' do
     topic 'parameter types'
     topic 'return types'
@@ -347,10 +546,17 @@ topic 'python' do
     topic 'abstract methods'
   end
 
-  topic 'generators' do
-    topic 'yield'
-    topic 'yield from'
-    topic 'send'
+  topic 'concurrency' do
+    topic 'generators' do
+      topic 'yield'
+      topic 'yield from'
+      topic 'send'
+    end
+
+    topic 'coroutines' do
+      topic 'await'
+      topic 'async'
+    end
   end
 
   topic 'decorators'
@@ -360,8 +566,6 @@ topic 'python' do
     topic 'context managers'
   end
 
-  topic 'async/await'
-
   topic 'regular expressions' do
     topic 're module' do
       topic 'fullmatch'
@@ -370,8 +574,6 @@ topic 'python' do
       topic 'findall'
       topic 'sub'
     end
-
-    topic 'regexes'
   end
 
   topic 'IO' do
@@ -397,23 +599,6 @@ topic 'python' do
       topic 'querying docstrings'
       topic 'dir'
     end
-
-    topic 'google'
-    topic 'English terminology'
-  end
-
-  topic 'troubleshooting' do
-    topic 'debugging' do
-      topic 'step into'
-      topic 'step over'
-      topic 'breakpoints'
-      topic 'call stack'
-      topic 'watch'
-    end
-
-    topic 'reading the error message'
-    topic 'finding bugs in given code'
-    topic 'writing bug reports'
   end
 
   topic 'testing' do
@@ -449,8 +634,23 @@ topic 'python' do
   end
 
   topic 'math' do
-    topic 'O(...)'
-    topic 'logic'
+    topic 'O(...)' do
+      topic 'deriving time/space complexity'
+      topic 'comparing complexities'
+    end
+
+    topic 'logic' do
+      topic 'boolean algebra' do
+        topic 'conjunction'
+        topic 'disjunction'
+        topic 'implication'
+        topic 'negation'
+        topic 'biconditional'
+      end
+
+      topic 'truth tables'
+    end
+
     topic 'linear functions'
     topic 'matrices'
   end
@@ -511,11 +711,15 @@ topic 'javascript' do
       topic 'install --save-dev'
       topic 'package.json'
     end
+
+    topic 'bundler'
   end
 end
 
 topic 'typescript' do
   topic 'typing' do
+    topic 'unsoundness'
+
     topic 'basic types' do
       topic 'number'
       topic 'boolean'
@@ -550,22 +754,6 @@ topic 'typescript' do
 
     topic 'nonnullability'
     topic 'structural subtyping'
-  end
-end
-
-topic 'encoding' do
-  topic 'string encodings' do
-    topic 'ascii'
-    topic 'unicode'
-  end
-
-  type 'byte order' do
-    topic 'little vs big endian'
-    topic 'byte order marker'
-  end
-
-  topic 'files' do
-    topic 'binary vs text'
   end
 end
 
@@ -613,6 +801,8 @@ topic 'version control' do
     topic 'notes'
   end
 
+  topic 'merge conflicts'
+
   topic 'hooks'
 
   topic 'GitHub' do
@@ -632,11 +822,46 @@ topic 'shell' do
 
   topic 'piping'
   topic 'redirecting'
+
+  topic 'control flow' do
+    topic 'if'
+    topic 'for'
+  end
+
+  topic 'commands' do
+    topic 'echo'
+    topic 'ls'
+    topic 'cd'
+    topic 'mkdir'
+    topic 'touch'
+    topic 'pwd'
+    topic 'cat'
+    topic 'find'
+    topic 'mv'
+    topic 'cp'
+    topic 'rm'
+    topic 'xargs'
+    topic 'wc'
+    topic 'sort'
+    topic 'cut'
+    topic 'tr'
+    topic 'head'
+    topic 'tail'
+    topic 'grep'
+    topic 'chmod'
+    topic 'uniq'
+    topic 'diff'
+    topic 'tar'
+    topic 'zip'
+    topic 'wget'
+    topic 'curl'
+    topic 'scp'
+    topic 'ssh'
+    topic 'using man pages'
+  end
 end
 
-topic 'logging' do
-
-end
+topic 'logging'
 
 topic 'testing' do
   topic 'unit testing' do
@@ -646,41 +871,4 @@ topic 'testing' do
   topic 'acceptance testing'
   topic 'integration testing'
   topic 'black box vs white box'
-end
-
-topic 'typing' do
-  topic 'static vs dynamic typing'
-
-  topic 'type polymorphism' do
-    topic 'using'
-
-    topic 'defining' do
-      topic 'bounds'
-      topic 'covariance/contravariance'
-    end
-  end
-
-  topic 'subtype polymorphism' do
-    topic 'inheritance'
-    topic 'interface'
-    topic 'composition vs inheritance'
-  end
-end
-
-topic 'object oriented programming' do
-  topic 'classes vs objects'
-
-  topic 'subtype polymorphism' do
-    topic 'inheritance'
-    topic 'interface'
-    topic 'composition vs inheritance'
-  end
-
-  topic 'access modifiers' do
-    topic 'public'
-    topic 'protected'
-    topic 'private'
-  end
-
-
 end
