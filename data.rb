@@ -1,20 +1,98 @@
-category 'python' do
-  category 'tools' do
-    topic 'running scripts from shell'
-    topic 'interactive Python'
+topic 'general programming' do
+  topic 'identity vs value equality'
 
-    category 'IDE' do
-      topic 'autocomplete'
-      topic 'refactoring'
-      topic 'useful shortcuts'
-    end
+  topic 'code editor' do
+    topic 'autocomplete'
+    topic 'refactoring'
+    topic 'useful shortcuts'
+  end
+end
 
-    topic 'pip'
-    topic 'pipenv'
+topic 'encoding' do
+  topic 'string encodings' do
+    topic 'ascii'
+    topic 'unicode'
   end
 
-  category 'operators' do
-    category 'arithmetic' do
+  type 'byte order' do
+    topic 'little vs big endian'
+    topic 'byte order marker'
+  end
+
+  topic 'files' do
+    topic 'binary vs text'
+  end
+end
+
+topic 'versioning' do
+  topic 'how git works'
+  topic '.gitignore'
+
+  topic 'git commands' do
+    topic 'config'
+
+    topic 'init' do
+      topic 'bare'
+    end
+
+    topic 'clone'
+    topic 'add'
+    topic 'commit'
+    topic 'status'
+    topic 'log'
+    topic 'diff'
+    topic 'fetch'
+    topic 'pull'
+    topic 'push'
+    topic 'checkout'
+    topic 'reset' do
+      topic 'soft'
+      topic 'mixed'
+      topic 'hard'
+    end
+    topic 'branch'
+    topic 'merge'
+    topic 'clean'
+    topic 'rebase'
+    topic 'revert'
+    topic 'remote' do
+      topic 'add'
+      topic 'remove'
+      topic 'set-url'
+    end
+    topic 'stash'
+    topic 'tag'
+    topic 'worktree'
+    topic 'bisect'
+    topic 'reflog'
+  end
+
+  topic 'hooks'
+
+  topic 'GitHub' do
+    topic 'pull requests'
+  end
+
+  topic 'git flow'
+end
+
+
+topic 'python' do
+  topic 'running scripts from shell'
+  topic 'interactive Python'
+
+  topic 'distribution' do
+    topic 'pip'
+    topic 'pipx'
+    topic 'pipenv'
+
+    topic 'modules'
+    topic 'packages'
+    topic 'setup.py'
+  end
+
+  topic 'operators' do
+    topic 'arithmetic' do
       topic '+'
       topic '-'
       topic '*'
@@ -24,7 +102,7 @@ category 'python' do
       topic '**'
     end
 
-    category 'comparison' do
+    topic 'comparison' do
       topic '<'
       topic '>'
       topic '<='
@@ -34,13 +112,13 @@ category 'python' do
       topic 'is'
     end
 
-    category 'logic' do
+    topic 'logic' do
       topic '&&'
       topic '||'
       topic '!'
     end
 
-    category 'bitwise' do
+    topic 'bitwise' do
       topic '&'
       topic '|'
       topic '~'
@@ -49,26 +127,26 @@ category 'python' do
     end
   end
 
-  category 'control flow' do
+  topic 'control flow' do
     topic 'if'
     topic 'while'
     topic 'for'
     topic 'recursion'
 
-    category 'exceptions' do
+    topic 'exceptions' do
       topic 'raise'
       topic 'try/except'
     end
   end
 
-  category 'basic values types' do
+  topic 'basic values types' do
     topic 'integers'
     topic 'fractions'
     topic 'floating point numbers'
     topic 'booleans'
     topic 'None'
 
-    category 'strings' do
+    topic 'strings' do
       topic 'raw strings literals'
       topic 'interpolated strings literals'
       topic 'multiline strings literals'
@@ -77,12 +155,12 @@ category 'python' do
     topic 'bytes'
   end
 
-  category 'functions' do
+  topic 'functions' do
     topic 'calling'
     topic 'parameter passing'
     topic 'return value'
 
-    category 'parameters' do
+    topic 'parameters' do
       topic 'positional arguments'
       topic 'keyword arguments'
       topic 'default arguments'
@@ -90,7 +168,7 @@ category 'python' do
       topic '**'
     end
 
-    category 'defining' do
+    topic 'defining' do
       topic 'local variables'
       topic 'nonlocal variables'
       topic 'returning'
@@ -98,7 +176,7 @@ category 'python' do
     end
   end
 
-  category 'containers' do
+  topic 'containers' do
     topic 'len'
     topic 'in'
 
@@ -106,7 +184,7 @@ category 'python' do
     topic 'sort/sorted'
     topic 'sort/sorted key'
 
-    category 'lists' do
+    topic 'lists' do
       topic 'literals'
       topic 'destructuring assignment'
       topic '*'
@@ -116,11 +194,11 @@ category 'python' do
       topic 'del'
     end
 
-    category 'set' do
+    topic 'set' do
       topic 'literals'
     end
 
-    category 'dict' do
+    topic 'dict' do
       topic 'literals'
       topic 'reading'
       topic 'writing'
@@ -131,28 +209,28 @@ category 'python' do
       topic 'defaultdict'
     end
 
-    category 'tuple' do
+    topic 'tuple' do
       topic 'namedtuple'
       topic 'literals'
       topic 'destructuring assignment'
     end
   end
 
-  category 'libraries' do
+  topic 'libraries' do
     topic 'import'
     topic 'import as'
     topic 'from import'
     topic 'look up in documentation'
   end
 
-  category 'code organization' do
+  topic 'code organization' do
     topic 'modules'
     topic 'packages'
     topic 'setup.py'
     topic '__init__.py'
   end
 
-  category 'comprehensions' do
+  topic 'comprehensions' do
     topic 'list comprehensions'
     topic 'set comprehensions'
     topic 'dict comprehensions'
@@ -163,14 +241,14 @@ category 'python' do
     topic 'multiple fors'
   end
 
-  category 'object oriented programming' do
+  topic 'object oriented programming' do
     topic 'methods'
     topic 'property getters'
     topic 'property setters'
     topic 'static methods'
     topic 'class methods'
 
-    category 'encapsulation' do
+    topic 'encapsulation' do
       topic 'protected members'
       topic 'private members'
     end
@@ -180,16 +258,16 @@ category 'python' do
     topic 'super'
     topic 'mixins'
 
-    category 'dunder methods' do
+    topic 'dunder methods' do
       topic '__init__'
       topic '__eq__'
 
-      category 'string representation' do
+      topic 'string representation' do
         topic '__str__'
         topic '__repr__'
       end
 
-      category 'containers' do
+      topic 'containers' do
         topic '__len__'
         topic '__contains__'
         topic '__getitem__'
@@ -197,8 +275,8 @@ category 'python' do
         topic '__delitem__'
       end
 
-      category 'operators' do
-        category 'arithmetic' do
+      topic 'operators' do
+        topic 'arithmetic' do
           topic '__add__'
           topic '__iadd__'
           topic '__sub__'
@@ -211,7 +289,7 @@ category 'python' do
           topic '__ifloordiv__'
         end
 
-        category 'comparison' do
+        topic 'comparison' do
           topic '__le__'
           topic '__lt__'
           topic '__eq__'
@@ -220,7 +298,7 @@ category 'python' do
           topic '__ge__'
         end
 
-        category 'logic' do
+        topic 'logic' do
           topic '__and__'
           topic '__or__'
           topic '__neg__'
@@ -233,11 +311,11 @@ category 'python' do
     end
   end
 
-  category 'functional programming' do
+  topic 'functional programming' do
     topic 'first class functions'
     topic 'immutability'
 
-    category 'higher order functions' do
+    topic 'higher order functions' do
       topic 'map'
       topic 'filter'
       topic 'reduce'
@@ -245,14 +323,14 @@ category 'python' do
     end
   end
 
-  category 'static typing' do
+  topic 'static typing' do
     topic 'parameter types'
     topic 'return types'
     topic 'subtyping'
     topic 'abstract methods'
   end
 
-  category 'generators' do
+  topic 'generators' do
     topic 'yield'
     topic 'yield from'
     topic 'send'
@@ -260,15 +338,15 @@ category 'python' do
 
   topic 'decorators'
 
-  category 'context managers' do
+  topic 'context managers' do
     topic 'with ... as'
     topic 'context managers'
   end
 
   topic 'async/await'
 
-  category 'regular expressions' do
-    category 're module' do
+  topic 'regular expressions' do
+    topic 're module' do
       topic 'fullmatch'
       topic 'match'
       topic 'search'
@@ -279,7 +357,7 @@ category 'python' do
     topic 'regexes'
   end
 
-  category 'IO' do
+  topic 'IO' do
     topic 'opening files'
     topic 'closing files'
     topic 'reading files'
@@ -287,7 +365,7 @@ category 'python' do
     topic 'listing files'
     topic 'check for file existence'
 
-    category 'data formats' do
+    topic 'data formats' do
       topic 'csv'
       topic 'xml'
       topic 'json'
@@ -295,11 +373,11 @@ category 'python' do
     end
   end
 
-  category 'shell' do
+  topic 'shell' do
     topic 'sys.argv'
     topic 'argparse module'
 
-    category 'standard streams' do
+    topic 'standard streams' do
       topic 'stdin'
       topic 'stdout'
       topic 'stderr'
@@ -308,8 +386,8 @@ category 'python' do
     end
   end
 
-  category 'documentation' do
-    category 'commenting' do
+  topic 'documentation' do
+    topic 'commenting' do
       topic 'comments'
       topic 'docstrings'
       topic 'querying docstrings'
@@ -320,8 +398,8 @@ category 'python' do
     topic 'English terminology'
   end
 
-  category 'troubleshooting' do
-    category 'debugging' do
+  topic 'troubleshooting' do
+    topic 'debugging' do
       topic 'step into'
       topic 'step over'
       topic 'breakpoints'
@@ -334,13 +412,13 @@ category 'python' do
     topic 'writing bug reports'
   end
 
-  category 'coding standards' do
+  topic 'coding standards' do
     topic 'descriptive naming'
     topic 'linters'
     topic 'split into functions'
   end
 
-  category 'testing' do
+  topic 'testing' do
     topic 'pytest framework'
     topic 'reading tests'
     topic 'writing tests'
@@ -348,7 +426,7 @@ category 'python' do
     topic 'fixtures'
   end
 
-  category 'background information' do
+  topic 'background information' do
     topic 'building abstractions with bits & bytes'
     topic 'interpreters vs compilers'
     topic 'machine language'
@@ -357,8 +435,8 @@ category 'python' do
     topic 'turing completeness'
   end
 
-  category 'low level' do
-    category 'number representations' do
+  topic 'low level' do
+    topic 'number representations' do
       topic 'binary'
       topic 'octal'
       topic 'hexadecimal'
@@ -366,12 +444,7 @@ category 'python' do
       topic 'converting between two representations'
     end
 
-    category 'string encodings' do
-      topic 'ascii'
-      topic 'unicode'
-    end
-
-    category 'memory layout' do
+    topic 'memory layout' do
       topic 'static allocation'
       topic 'stack allocation'
       topic 'heap allocation'
@@ -380,41 +453,13 @@ category 'python' do
     topic 'references'
   end
 
-  category 'efficient code' do
+  topic 'efficient code' do
     topic 'picking right container'
     topic 'avoid duplicate computations'
     topic 'efficient algorithms'
   end
 
-  category 'versioning' do
-    topic 'git flow'
-    topic 'how git works'
-    topic '.gitignore'
-
-    category 'git commands' do
-      topic 'init'
-      topic 'clone'
-      topic 'add'
-      topic 'commit'
-      topic 'status'
-      topic 'log'
-      topic 'pull'
-      topic 'push'
-      topic 'checkout'
-      topic 'reset'
-      topic 'branch'
-      topic 'merge'
-      topic 'clean'
-      topic 'revert'
-      topic 'remote'
-    end
-
-    category 'GitHub' do
-      topic 'pull requests'
-    end
-  end
-
-  category 'math' do
+  topic 'math' do
     topic 'O(...)'
     topic 'logic'
     topic 'linear functions'
