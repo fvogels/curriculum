@@ -6,89 +6,87 @@ topic 'general programming' do
     topic 'refactoring'
     topic 'useful shortcuts'
   end
+
+  topic 'background information' do
+    topic 'building abstractions on top of bits'
+    topic 'interpreters vs compilers'
+    topic 'machine language'
+    topic 'assembly'
+    topic 'differences between languages'
+    topic 'turing completeness'
+  end
+
+  topic 'execution' do
+    topic 'strict evaluation order'
+    topic 'value vs references'
+  end
+
+  topic 'functions' do
+    topic 'parameters'
+    topic 'local variables'
+    topic 'returning'
+  end
+
+  topic 'exceptions' do
+    topic 'throwing exceptions'
+    topic 'catching exceptions'
+    topic 'defining exceptions'
+  end
+
+  topic 'coding standards' do
+    topic 'following conventions'
+    topic 'linters'
+    topic 'descriptive naming'
+    topic 'split into functions'
+  end
 end
 
-topic 'encoding' do
-  topic 'string encodings' do
-    topic 'ascii'
-    topic 'unicode'
-  end
+topic 'data structures' do
+  topic 'list'
+  topic 'linked list'
+  topic 'stack'
+  topic 'queue'
+  topic 'set'
+  topic 'map'
+  topic 'tuples'
 
-  type 'byte order' do
-    topic 'little vs big endian'
-    topic 'byte order marker'
-  end
+  topic 'hashing'
 
-  topic 'files' do
-    topic 'binary vs text'
-  end
+  topic 'selecting data structures'
 end
 
-topic 'versioning' do
-  topic 'how git works'
-  topic '.gitignore'
-
-  topic 'git commands' do
-    topic 'config'
-
-    topic 'init' do
-      topic 'bare'
-    end
-
-    topic 'clone'
-    topic 'add'
-    topic 'commit'
-    topic 'status'
-    topic 'log'
-    topic 'diff'
-    topic 'fetch'
-    topic 'pull'
-    topic 'push'
-    topic 'checkout'
-    topic 'reset' do
-      topic 'soft'
-      topic 'mixed'
-      topic 'hard'
-    end
-    topic 'branch'
-    topic 'merge'
-    topic 'clean'
-    topic 'rebase'
-    topic 'revert'
-    topic 'remote' do
-      topic 'add'
-      topic 'remove'
-      topic 'set-url'
-    end
-    topic 'stash'
-    topic 'tag'
-    topic 'worktree'
-    topic 'bisect'
-    topic 'reflog'
-  end
-
-  topic 'hooks'
-
-  topic 'GitHub' do
-    topic 'pull requests'
-  end
-
-  topic 'git flow'
+topic 'general skills' do
+  topic 'google'
+  topic 'reading documentation'
 end
 
+topic 'random number generation' do
+  topic 'pRNG'
+end
 
 topic 'python' do
   topic 'running scripts from shell'
   topic 'interactive Python'
 
-  topic 'distribution' do
-    topic 'pip'
-    topic 'pipx'
-    topic 'pipenv'
-
+  topic 'libraries' do
     topic 'modules'
     topic 'packages'
-    topic 'setup.py'
+
+    topic 'tools' do
+      topic 'pip'
+      topic 'pipx'
+      topic 'pipenv'
+    end
+
+    topic 'import' do
+      topic 'import as'
+      topic 'from import'
+    end
+
+    topic 'creating' do
+      topic 'setup.py'
+      topic 'publishing'
+    end
   end
 
   topic 'operators' do
@@ -135,6 +133,7 @@ topic 'python' do
 
     topic 'exceptions' do
       topic 'raise'
+      topic 'raise from'
       topic 'try/except'
     end
   end
@@ -155,6 +154,17 @@ topic 'python' do
     topic 'bytes'
   end
 
+  topic 'scripting' do
+    topic 'sys.argv'
+    topic 'argparse module'
+
+    topic 'sys.stdin'
+    topic 'sys.stdout'
+    topic 'sys.stderr'
+
+    topic '__name__'
+  end
+
   topic 'functions' do
     topic 'calling'
     topic 'parameter passing'
@@ -171,6 +181,7 @@ topic 'python' do
     topic 'defining' do
       topic 'local variables'
       topic 'nonlocal variables'
+      topic 'global variables'
       topic 'returning'
       topic 'nested functions'
     end
@@ -183,6 +194,10 @@ topic 'python' do
     topic 'reverse/reversed'
     topic 'sort/sorted'
     topic 'sort/sorted key'
+
+    topic 'bool' do
+      topic 'falsey/truthy'
+    end
 
     topic 'lists' do
       topic 'literals'
@@ -200,8 +215,9 @@ topic 'python' do
 
     topic 'dict' do
       topic 'literals'
-      topic 'reading'
-      topic 'writing'
+      topic 'accessing'
+      topic 'updating'
+      topic 'del'
       topic '__hash__'
       topic '__eq__'
       topic 'immutable keys'
@@ -214,13 +230,6 @@ topic 'python' do
       topic 'literals'
       topic 'destructuring assignment'
     end
-  end
-
-  topic 'libraries' do
-    topic 'import'
-    topic 'import as'
-    topic 'from import'
-    topic 'look up in documentation'
   end
 
   topic 'code organization' do
@@ -243,20 +252,28 @@ topic 'python' do
 
   topic 'object oriented programming' do
     topic 'methods'
-    topic 'property getters'
-    topic 'property setters'
+    topic 'properties' do
+      topic 'getters'
+      topic 'setters'
+      topic 'deleter'
+
+    end
     topic 'static methods'
     topic 'class methods'
 
     topic 'encapsulation' do
+      topic 'public members'
       topic 'protected members'
       topic 'private members'
     end
 
     topic 'isinstance'
     topic 'inheritance'
+    topic 'multiple inheritance'
     topic 'super'
     topic 'mixins'
+
+    topic 'super'
 
     topic 'dunder methods' do
       topic '__init__'
@@ -275,7 +292,7 @@ topic 'python' do
         topic '__delitem__'
       end
 
-      topic 'operators' do
+      topic 'operator overloading' do
         topic 'arithmetic' do
           topic '__add__'
           topic '__iadd__'
@@ -373,19 +390,6 @@ topic 'python' do
     end
   end
 
-  topic 'shell' do
-    topic 'sys.argv'
-    topic 'argparse module'
-
-    topic 'standard streams' do
-      topic 'stdin'
-      topic 'stdout'
-      topic 'stderr'
-      topic 'piping'
-      topic 'redirecting'
-    end
-  end
-
   topic 'documentation' do
     topic 'commenting' do
       topic 'comments'
@@ -407,15 +411,9 @@ topic 'python' do
       topic 'watch'
     end
 
-    topic 'reading the f*****g error message'
+    topic 'reading the error message'
     topic 'finding bugs in given code'
     topic 'writing bug reports'
-  end
-
-  topic 'coding standards' do
-    topic 'descriptive naming'
-    topic 'linters'
-    topic 'split into functions'
   end
 
   topic 'testing' do
@@ -424,15 +422,6 @@ topic 'python' do
     topic 'writing tests'
     topci 'assertions'
     topic 'fixtures'
-  end
-
-  topic 'background information' do
-    topic 'building abstractions with bits & bytes'
-    topic 'interpreters vs compilers'
-    topic 'machine language'
-    topic 'assembly'
-    topic 'differences between languages'
-    topic 'turing completeness'
   end
 
   topic 'low level' do
@@ -469,4 +458,229 @@ topic 'python' do
   topic 'code reading'
   topic 'logging'
   topic 'profiling'
+end
+
+topic 'javascript' do
+  topic 'basic values' do
+    topic 'number'
+    topic 'boolean'
+    topic 'string'
+    topic 'array'
+    topic 'object'
+    topic 'Set'
+    topic 'Map'
+    topic 'BigInt'
+    topic 'symbol'
+  end
+
+  topic 'control flow' do
+    topic 'if'
+    topic 'while'
+    topic 'for'
+    topic 'for-in'
+    topic 'for-of'
+    topic 'try/catch/finally'
+  end
+
+  topic 'strings' do
+    topic 'template literals' do
+      topic 'tagged templates'
+    end
+
+    topic 'methods'
+  end
+
+  topic 'arrays' do
+    topic 'methods'
+    topic 'spread operator'
+  end
+
+  topic 'objects' do
+    topic 'Object. methods'
+    topic 'spread operator'
+    topic '.'
+    topic '[]'
+    topic 'in'
+  end
+
+  topic 'destructuring'
+
+  topic 'packages' do
+    topic 'npm' do
+      topic 'install'
+      topic 'install --save-dev'
+      topic 'package.json'
+    end
+  end
+end
+
+topic 'typescript' do
+  topic 'typing' do
+    topic 'basic types' do
+      topic 'number'
+      topic 'boolean'
+      topic 'string'
+      topic 'T[]'
+      topic 'object'
+      topic 'Record'
+      topic 'Set'
+      topic 'Map'
+      topic 'any'
+      topic 'unknown'
+      topic 'never'
+      topic 'function types'
+      topic 'type aliases'
+      topic 'interfaces'
+      topic 'BigInt'
+      topic 'symbol'
+      topic 'literal types'
+    end
+
+    topic 'type manipulation' do
+      topic 'union types'
+      topic 'difference types'
+      topic 'optional'
+      topic 'Partial'
+      topic 'keyof'
+      topic 'typeof'
+      topic 'indexed access types'
+      topic 'conditional types'
+      topic 'mapped types'
+    end
+
+    topic 'nonnullability'
+    topic 'structural subtyping'
+  end
+end
+
+topic 'encoding' do
+  topic 'string encodings' do
+    topic 'ascii'
+    topic 'unicode'
+  end
+
+  type 'byte order' do
+    topic 'little vs big endian'
+    topic 'byte order marker'
+  end
+
+  topic 'files' do
+    topic 'binary vs text'
+  end
+end
+
+topic 'version control' do
+  topic 'how git works'
+  topic '.gitignore'
+
+  topic 'git commands' do
+    topic 'config'
+
+    topic 'init' do
+      topic 'bare'
+    end
+
+    topic 'clone'
+    topic 'add'
+    topic 'commit'
+    topic 'status'
+    topic 'log'
+    topic 'diff'
+    topic 'fetch'
+    topic 'pull'
+    topic 'push'
+    topic 'checkout'
+    topic 'reset' do
+      topic 'soft'
+      topic 'mixed'
+      topic 'hard'
+    end
+    topic 'branch'
+    topic 'merge'
+    topic 'clean'
+    topic 'rebase'
+    topic 'revert'
+    topic 'remote' do
+      topic 'add'
+      topic 'remove'
+      topic 'set-url'
+    end
+    topic 'stash'
+    topic 'tag'
+    topic 'worktree'
+    topic 'bisect'
+    topic 'reflog'
+    topic 'notes'
+  end
+
+  topic 'hooks'
+
+  topic 'GitHub' do
+    topic 'pull requests'
+  end
+
+  topic 'git flow'
+end
+
+
+topic 'shell' do
+  topic 'standard streams' do
+    topic 'stdin'
+    topic 'stdout'
+    topic 'stderr'
+  end
+
+  topic 'piping'
+  topic 'redirecting'
+end
+
+topic 'logging' do
+
+end
+
+topic 'testing' do
+  topic 'unit testing' do
+
+  end
+
+  topic 'acceptance testing'
+  topic 'integration testing'
+  topic 'black box vs white box'
+end
+
+topic 'typing' do
+  topic 'static vs dynamic typing'
+
+  topic 'type polymorphism' do
+    topic 'using'
+
+    topic 'defining' do
+      topic 'bounds'
+      topic 'covariance/contravariance'
+    end
+  end
+
+  topic 'subtype polymorphism' do
+    topic 'inheritance'
+    topic 'interface'
+    topic 'composition vs inheritance'
+  end
+end
+
+topic 'object oriented programming' do
+  topic 'classes vs objects'
+
+  topic 'subtype polymorphism' do
+    topic 'inheritance'
+    topic 'interface'
+    topic 'composition vs inheritance'
+  end
+
+  topic 'access modifiers' do
+    topic 'public'
+    topic 'protected'
+    topic 'private'
+  end
+
+
 end
