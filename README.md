@@ -55,9 +55,11 @@
     * Complex Numbers
   * `bool`
   * `string`
-    * Raw Strings
-    * Formatted Strings
-    * Multiline Strings
+    * Literals
+      * Raw Strings
+      * Formatted Strings
+      * Multiline Strings
+    * Escape Characters
   * `None`
   * Operators
 * Variables
@@ -65,6 +67,7 @@
   * `if`
   * `while`
   * `for`
+  * `match`
   * Recursion
 * Equality
   * Value vs Identity Equality
@@ -211,6 +214,8 @@
 
 * PyGame
 * Pillow
+* Flask
+* Turtle
 
 ## Types of Exercises
 
@@ -225,3 +230,8 @@
 * Make Given Code More Efficient
 * Making Use of Existing Functions/Classes
 * Building
+
+## Books
+
+* [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e)
+* [Think Python](https://greenteapress.com/thinkpython/thinkpython.pdf)
