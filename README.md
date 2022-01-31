@@ -235,3 +235,4 @@
 
 * [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e)
 * [Think Python](https://greenteapress.com/thinkpython/thinkpython.pdf)
+* [Reddit List](https://www.reddit.com/r/learnpython/wiki/books)
