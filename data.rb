@@ -273,16 +273,16 @@ topic 'algorithms' do
     topic 'dijkstra'
     topic 'a*'
   end
+
+  topic 'random number generation' do
+    topic 'pRNG'
+    topic 'seed'
+  end
 end
 
 topic 'general skills' do
   topic 'google'
   topic 'reading documentation'
-end
-
-topic 'random number generation' do
-  topic 'pRNG'
-  topic 'seed'
 end
 
 topic 'python' do
@@ -734,7 +734,10 @@ topic 'javascript' do
   topic 'packages' do
     topic 'npm' do
       topic 'install'
-      topic 'install --save-dev'
+      topic 'uninstall'
+      topic 'dependencies'
+      topic 'peer dependencies'
+      topic 'version'
       topic 'package.json'
     end
 
