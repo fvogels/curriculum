@@ -233,6 +233,8 @@
 
 ## Books
 
+* [Automate the Boring Stuff](https://automatetheboringstuff.com/)
 * [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e)
 * [Think Python](https://greenteapress.com/thinkpython/thinkpython.pdf)
+* [Python Turtle](https://realpython.com/beginners-guide-python-turtle/)
 * [Reddit List](https://www.reddit.com/r/learnpython/wiki/books)
