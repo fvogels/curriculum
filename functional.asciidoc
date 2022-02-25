@@ -1,0 +1,85 @@
+= Functional Programming
+
+Het basisprincipe achter functioneel programmeren is statelessness of immutability, nl. het nooit _wijzigen_ van variabelewaardes.
+
+[source,python]
+----
+x = 5   # Ok
+x = 6   # Mag niet, wijzigt x
+
+x = [1, 2, 3]  # Ok
+x.append(4)    # Mag niet, wijzigt lijst
+----
+
+== Statelessness
+
+Functies kunnen vaak op twee manieren geschreven worden:
+
+* Ze wijzigen hun argument en geven niets terug (= stateful, imperatieve stijl).
+* Ze laten hun argument met rust en geven een nieuwe waarde terug (= stateless, functionele stijl).
+
+.Voorbeeld in Python
+[&collapsible]
+====
+```python
+# Imperative style modifies parameter
+def double_elements(ns):
+  for i in range(len(ns)):
+    ns[i] *= 2
+
+
+# Functional style creates new list
+def double_elements(ns):
+  result = []
+  for n in ns:
+    result.append(n * 2)
+  return result
+```
+====
+
+== List Comprehensions
+
+```python
+# Mapping
+names = [person.name for person in people]
+
+# Filtering
+names_of_men = [person.name for person in people if person.male]
+```
+
+== First Class Functions and Higher Order Functions
+
+```python
+def is_odd(x):
+  return x % 2 != 0
+
+xs = [1,2,3,4,5]
+
+odd_xs = filter(is_odd, xs)
+# [1, 3, 5]
+```
+
+== Lambda Expressions
+
+```python
+xs = [1,2,3,4,5]
+
+odd_xs = filter(lambda x: x % 2 != 0, xs)
+```
+
+== Recursion
+
+```python
+def names(people):
+  if people:
+    first, *rest = people
+    return [first.name, *names(rest)]
+  else:
+    return []
+```
+
+== Persistent Data Structures
+
+* Linked lists
+* Trees
+* Performance impact (structural sharing)

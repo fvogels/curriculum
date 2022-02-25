@@ -237,4 +237,6 @@
 * [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e)
 * [Think Python](https://greenteapress.com/thinkpython/thinkpython.pdf)
 * [Python Turtle](https://realpython.com/beginners-guide-python-turtle/)
+* [A Byte of Python](https://python.swaroopch.com/)
+* [How to Think Like a Computer Scientist: Interactive Edition](https://runestone.academy/ns/books/published/thinkcspy/index.html)
 * [Reddit List](https://www.reddit.com/r/learnpython/wiki/books)

@@ -8,7 +8,7 @@ def remove_odds(ns):
   for i in range(len(ns), 0, -1):
      if is_odd(ns[i-1]):
        del ns[i-1]
-       
+
 # Functional creates new list
 def remove_odds(ns):
   result = []
@@ -33,7 +33,7 @@ names_of_men = [person.name for person in people if person.male]
 ```python
 def is_odd(x):
   return x % 2 != 0
-  
+
 xs = [1,2,3,4,5]
 
 odd_xs = filter(is_odd, xs)
