@@ -19,7 +19,7 @@ Functies kunnen vaak op twee manieren geschreven worden:
 * Ze laten hun argument met rust en geven een nieuwe waarde terug (= stateless, functionele stijl).
 
 .Voorbeeld in Python
-[&collapsible]
+[%collapsible]
 ====
 ```python
 # Imperative style modifies parameter
