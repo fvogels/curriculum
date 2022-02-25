@@ -43,7 +43,7 @@ def double_elements(ns):
 ====
 [source,javascript]
 ----
-# Imperative style modifies parameter
+// Imperative style modifies parameter
 function doubleAll(ns)
 {
     for ( let i = 0; i !== ns.length; ++i )
@@ -53,7 +53,7 @@ function doubleAll(ns)
 }
 
 
-# Functional style creates new list
+// Functional style creates new list
 function doubleAll(ns)
 {
     const result = [];
