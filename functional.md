@@ -50,12 +50,14 @@ odd_xs = filter(lambda x: x % 2 != 0, xs)
 
 ## Recursion
 
+```python
 def names(people):
   if people:
     first, *rest = people
     return [first.name, *names(rest)]
   else:
     return []
+```
 
 ## Persistent Data Structures
 
