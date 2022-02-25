@@ -1,15 +1,35 @@
 = Functional Programming
 
-Het basisprincipe achter functioneel programmeren is statelessness of immutability, nl. het nooit _wijzigen_ van variabelewaardes.
+Het basisprincipe achter functioneel programmeren is statelessness of immutability, nl. het nooit _wijzigen_ van waardes.
+Bv. indien men een lijst wil uitbreiden met een element, moet men een _nieuwe_ lijst aanmaken met dat extra element in.
 
+.Python Voorbeeld
+[%collapsible]
+====
 [source,python]
 ----
 x = 5   # Ok
 x = 6   # Mag niet, wijzigt x
 
-x = [1, 2, 3]  # Ok
-x.append(4)    # Mag niet, wijzigt lijst
+ns = [1, 2, 3]  # Ok
+ns.append(4)    # Mag niet, wijzigt lijst
+ks = [*ns, 4]   # Ok
 ----
+====
+
+.JavaScript Voorbeeld
+[%collapsible]
+====
+[source,javascript]
+----
+let x = 5;    // Ok
+x = 6         // Mag niet, wijzigt x
+
+const ns = [1, 2, 3];  // Ok
+ns.push(4);            // Mag niet, wijzigt lijst
+const ks = [...ns, 4]; // Ok
+----
+====
 
 == Statelessness
 
