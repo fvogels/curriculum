@@ -28,7 +28,7 @@ names = [person.name for person in people]
 names_of_men = [person.name for person in people if person.male]
 ```
 
-## First Class Functions
+## First Class Functions and Higher Order Functions
 
 ```python
 def is_odd(x):
@@ -63,3 +63,4 @@ def names(people):
 
 * Linked lists
 * Trees
+* Performance impact (structural sharing)
