@@ -3,7 +3,7 @@
 Het basisprincipe achter functioneel programmeren is statelessness of immutability, nl. het nooit _wijzigen_ van waardes.
 Bv. indien men een lijst wil uitbreiden met een element, moet men een _nieuwe_ lijst aanmaken met dat extra element in.
 
-.Python Voorbeeld
+.Python Voorbeelden
 [%collapsible]
 ====
 [source,python]
@@ -17,7 +17,7 @@ ks = [*ns, 4]   # Ok
 ----
 ====
 
-.JavaScript Voorbeeld
+.JavaScript Voorbeelden
 [%collapsible]
 ====
 [source,javascript]
@@ -141,7 +141,6 @@ IEnumerable<string> DoubleAll(IEnumerable<Person> people)
 def names_of_men(people):
     return [person.name for person in people
                         if person.male]
-```
 ====
 
 .C# Voorbeelden
@@ -176,17 +175,151 @@ Een *higher order function* is een functie die als parameter ontvangt.
 Merk op dat indien men in een OO taal een object doorgeeft als parameter, dit in een verzameling van functies is die worden doorgegeven.
 ====
 
+Men kan een onderscheid maken tussen
+
+* het schrijven van higher order functions,
+* het oproepen van higher order functions.
+
+=== map
+
+`map` past eenzelfde operatie toe op elk element van een lijst en geeft de resultaten terug.
+
+.JavaScript Voorbeelden
+[%collapsible]
+====
+[source,javascript]
+----
+Array.prototype.map = function (xs)
+{
+    const result = [];
+
+    for ( const x of this )
+    {
+        result.push(f(x));
+    }
+
+    return result;
+}
+
+function totalCost(items)
+{
+    return sum(items.map(item => item.price));
+}
+----
+====
+
+=== filter
+
+`filter` selecteert elementen uit een lijst die voldoen aan een bepaald criterium.
+
+.JavaScript Voorbeelden
+[%collapsible]
+====
+[source,javascript]
+----
+Array.prototype.filter = function(pred)
+{
+    const result = [];
+
+    for ( const x of this )
+    {
+        if ( pred(x) )
+        {
+            result.push(x);
+        }
+    }
+
+    return result;
+}
+
+function tallPeople(people)
+{
+    return people.filter(person => person.height >= 190);
+}
+----
+====
+
+=== count
+
+`count` telt het aantal elementen die voldoen aan een bepaald criterium.
+
+.JavaScript Voorbeelden
+[%collapsible]
+====
+[source,javascript]
+----
+Array.prototype.count = function (pred)
+{
+    let result = 0;
+
+    for ( const x of this )
+    {
+        if ( pred(x) )
+        {
+            result++;
+        }
+    }
+
+    return result;
+}
+
+function minesAround(mineField, position)
+{
+    return mineField.around(position).count(p => mineField.at(p) === MINE);
+}
+----
+====
+
+=== find
+
+`find` zoekt het eerste element dat voldoet aan een bepaald criterium.
+
+.JavaScript Voorbeelden
+[%collapsible]
+====
+[source,javascript]
+----
+Array.prototype.find = function (pred)
+{
+    for ( const x of this )
+    {
+        if ( pred(x) )
+        {
+            return x;
+        }
+    }
+}
+
+function findDuplicates(xs)
+{
+    return xs.find(x => xs.count(x) > 1);
+}
+----
+====
+
+=== Other Examples
+
+* `sort`
+* `any`
+* `all`
+* `partition`
+* `minBy`, `maxBy`
+* `reduce`
+* `groupBy`
+* `takeWhile`, `dropWhile`
+
+== Lambda Expressions
+
+Een *lambda expression* is een functie zonder naam.
+
 .Python Voorbeelden
 [%collapsible]
 ====
 [source,python]
 ----
-def is_odd(x):
-  return x % 2 != 0
-
 xs = [1,2,3,4,5]
 
-filter(is_odd, xs)   # [1, 3, 5]
+odd_xs = filter(lambda x: x % 2 != 0, xs)
 ----
 ====
 
@@ -195,38 +328,93 @@ filter(is_odd, xs)   # [1, 3, 5]
 ====
 [source,javascript]
 ----
-function isOdd(x)
-{
-    return x % 2 !== 0;
-}
-
 const xs = [1,2,3,4,5];
-xs.filter(isOdd);   // [1,3,5]
+
+const greaterThanTwo = xs.filter(x => x > 2);
 ----
 ====
 
-
-== Lambda Expressions
-
-```python
-xs = [1,2,3,4,5]
-
-odd_xs = filter(lambda x: x % 2 != 0, xs)
-```
-
 == Recursion
 
-```python
+Lussen zijn onmogelijk in een zuiver functionele context.
+Gezien waarden niet kunnen gewijzigd worden, zal in zulk een context een conditie-expressie altijd dezelfde waarde opleveren:
+
+[source,python]
+----
+while condition:
+    ...
+----
+
+* Ofwel evalueert `condition` altijd naar `true` en zitten we met een oneindige lus.
+* Ofwel evalueert `condition` altijd naar `false` en wordt de lus overgeslagen.
+
+Recursie is dan de enige manier om code te herhalen.
+
+[NOTE]
+====
+In zuiver functionele talen wordt doorgaans zelden met recursie gewerkt omdat de beoogde functionaliteit reeds geïmplementeerd is als functies zoals `map`, `filter`, `reduce`, etc.
+====
+
+.Python Voorbeelden
+[%collapsible]
+====
+[source,python]
+----
 def names(people):
   if people:
     first, *rest = people
     return [first.name, *names(rest)]
   else:
     return []
-```
+----
+====
+
+.JavaScript Voorbeelden
+[%collapsible]
+====
+[source,javascript]
+----
+function names(people)
+{
+    if ( people.length === 0 )
+    {
+        return [];
+    }
+    else
+    {
+        const [first, ...rest] = people;
+
+        return [first.name, ...names(rest)];
+    }
+}
+----
+====
 
 == Persistent Data Structures
 
+=== Structural Sharing
+
+Stateless waarden kunnen herbruikt worden.
+Datastructuren kunnen bijgevolg gebruik maken van gedeelde objecten om hun data in op te slaan.
+
+[mermaid]
+----
+graph TD
+A[Christmas] -->|Get money| B(Go shopping)
+B --> C{Let me think}
+C -->|One| D[Laptop]
+C -->|Two| E[iPhone]
+C -->|Three| F[Car]
+----
+
 * Linked lists
 * Trees
-* Performance impact (structural sharing)
+* Structural sharing
+* Performance aspects
+
+== Memoization
+
+== Laziness
+
+== Generators
+
