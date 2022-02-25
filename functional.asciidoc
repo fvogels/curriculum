@@ -21,7 +21,8 @@ Functies kunnen vaak op twee manieren geschreven worden:
 .Voorbeeld in Python
 [%collapsible]
 ====
-```python
+[source,python]
+----
 # Imperative style modifies parameter
 def double_elements(ns):
   for i in range(len(ns)):
@@ -34,7 +35,37 @@ def double_elements(ns):
   for n in ns:
     result.append(n * 2)
   return result
-```
+----
+====
+
+.Voorbeeld in JavaScript
+[%collapsible]
+====
+[source,javascript]
+----
+# Imperative style modifies parameter
+function doubleAll(ns)
+{
+    for ( let i = 0; i !== ns.length; ++i )
+    {
+        ns[i] *= 2;
+    }
+}
+
+
+# Functional style creates new list
+function doubleAll(ns)
+{
+    const result = [];
+
+    for ( const n of ns )
+    {
+        result.append(n);
+    }
+
+    return result;
+}
+----
 ====
 
 == List Comprehensions
