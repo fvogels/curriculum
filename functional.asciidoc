@@ -392,29 +392,99 @@ function names(people)
 
 == Persistent Data Structures
 
+Datastructuren die gebruikt worden in functionele context zijn
+
+* Linked lists
+* Trees
+
 === Structural Sharing
 
 Stateless waarden kunnen herbruikt worden.
 Datastructuren kunnen bijgevolg gebruik maken van gedeelde objecten om hun data in op te slaan.
 
-[mermaid]
+.Python Voorbeelden
+[%collapsible]
+====
+[source,python]
 ----
-graph TD
-A[Christmas] -->|Get money| B(Go shopping)
-B --> C{Let me think}
-C -->|One| D[Laptop]
-C -->|Two| E[iPhone]
-C -->|Three| F[Car]
-----
+class BinaryTree:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
 
-* Linked lists
-* Trees
-* Structural sharing
-* Performance aspects
+
+# Inserts without duplicates
+def insert(tree, value):
+    if tree is None:
+        return BinaryTree(value)
+    elif value < tree.value:
+        return BinaryTree(tree.value, insert(tree.left, value), tree.right)
+    elif value > tree.value:
+        return BinaryTree(tree.value, tree.left, insert(tree.right, value))
+    else:
+        return tree
+----
+====
 
 == Memoization
+
+Stateless functions zijn deterministisch: zelfde input leidt tot zelfde output.
+Deze resultaten kunnen gecachet worden.
+
+.Python Voorbeelden
+[%collapsible]
+====
+[source,python]
+----
+primes = {}
+
+def is_prime(n):
+    global primes
+    if n not in primes:
+        primes[n] = all(k % n != 0 for k in range(2, n))
+
+    return primes[n]
+----
+====
 
 == Laziness
 
 == Generators
 
+.Python Voorbeelden
+[%collapsible]
+====
+[source,python]
+----
+def numbers(n):
+    while True:
+        yield n
+        n += 1
+----
+====
+
+.JavaScript Voorbeelden
+[%collapsible]
+====
+[source,javascript]
+----
+function* numbers(n)
+{
+    while ( true )
+    {
+        yield n++;
+    }
+}
+----
+====
+
+== Voordelen
+
+* Voorkomt veel bugs
+* Gemakkelijker te debuggen
+* Parallelliseerbaar
+* Wordt gebruikt in data science
+* Wordt gebruikt in moderne frameworks zoals React
+* Veiliger voor asynchrone code
+* Quasi-noodzakelijk voor gedistribueerde systemen
