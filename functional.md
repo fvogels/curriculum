@@ -1,5 +1,23 @@
 # Functional Programming
 
+## Statelessness
+
+```python
+# Imperative modifies parameter
+def remove_odds(ns):
+  for i in range(len(ns), 0, -1):
+     if is_odd(ns[i-1]):
+       del ns[i-1]
+       
+# Functional creates new list
+def remove_odds(ns):
+  result = []
+  for n in ns:
+    if is_odd(n):
+      result.append(n)
+  return result
+```
+
 ## List Comprehensions
 
 ```python
@@ -29,8 +47,6 @@ xs = [1,2,3,4,5]
 
 odd_xs = filter(lambda x: x % 2 != 0, xs)
 ```
-
-## Statelessness
 
 ## Recursion
 
