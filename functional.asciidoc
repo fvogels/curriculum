@@ -31,7 +31,9 @@ const ks = [...ns, 4]; // Ok
 ----
 ====
 
-== Statelessness
+== Aspection
+
+=== Pure Functions
 
 Functies kunnen vaak op twee manieren geschreven worden:
 
@@ -88,11 +90,11 @@ function doubleAll(ns)
 ----
 ====
 
-== Comprehensions
+=== Comprehensions
 
 Comprehensions laten toe gemakkelijk met lijsten/sets/dictionaries te werken.
 
-=== Mapping
+==== Mapping
 
 Mapping houdt in dat men op elk element van een lijst eenzelfde operatie toepast en de resultaten verzamelt in een nieuwe lijst.
 
@@ -132,7 +134,7 @@ IEnumerable<string> DoubleAll(IEnumerable<Person> people)
 ----
 ====
 
-=== Filtering
+==== Filtering
 
 .Python Voorbeelden
 [%collapsible]
@@ -157,7 +159,7 @@ IEnumerable<string> NamesOfMen(IEnumerable<string> people)
 ----
 ====
 
-== First Class Functions and Higher Order Functions
+=== First Class Functions and Higher Order Functions
 
 *First class values* zijn waardes die
 
@@ -180,7 +182,7 @@ Men kan een onderscheid maken tussen
 * het schrijven van higher order functions,
 * het oproepen van higher order functions.
 
-=== map
+==== map
 
 `map` past eenzelfde operatie toe op elk element van een lijst en geeft de resultaten terug.
 
@@ -208,7 +210,7 @@ function totalCost(items)
 ----
 ====
 
-=== filter
+==== filter
 
 `filter` selecteert elementen uit een lijst die voldoen aan een bepaald criterium.
 
@@ -239,7 +241,7 @@ function tallPeople(people)
 ----
 ====
 
-=== count
+==== count
 
 `count` telt het aantal elementen die voldoen aan een bepaald criterium.
 
@@ -270,7 +272,7 @@ function minesAround(mineField, position)
 ----
 ====
 
-=== find
+==== find
 
 `find` zoekt het eerste element dat voldoet aan een bepaald criterium.
 
@@ -297,7 +299,7 @@ function findDuplicates(xs)
 ----
 ====
 
-=== Other Examples
+==== Other Examples
 
 * `sort`
 * `any`
@@ -308,7 +310,7 @@ function findDuplicates(xs)
 * `groupBy`
 * `takeWhile`, `dropWhile`
 
-== Lambda Expressions
+=== Lambda Expressions
 
 Een *lambda expression* is een functie zonder naam.
 
@@ -334,7 +336,7 @@ const greaterThanTwo = xs.filter(x => x > 2);
 ----
 ====
 
-== Recursion
+=== Recursion
 
 Lussen zijn onmogelijk in een zuiver functionele context.
 Gezien waarden niet kunnen gewijzigd worden, zal in zulk een context een conditie-expressie altijd dezelfde waarde opleveren:
@@ -390,14 +392,14 @@ function names(people)
 ----
 ====
 
-== Persistent Data Structures
+=== Persistent Data Structures
 
 Datastructuren die gebruikt worden in functionele context zijn
 
 * Linked lists
 * Trees
 
-=== Structural Sharing
+==== Structural Sharing
 
 Stateless waarden kunnen herbruikt worden.
 Datastructuren kunnen bijgevolg gebruik maken van gedeelde objecten om hun data in op te slaan.
@@ -427,7 +429,7 @@ def insert(tree, value):
 ----
 ====
 
-== Memoization
+=== Memoization
 
 Stateless functions zijn deterministisch: zelfde input leidt tot zelfde output.
 Deze resultaten kunnen gecachet worden.
@@ -448,9 +450,9 @@ def is_prime(n):
 ----
 ====
 
-== Laziness
+=== Laziness
 
-== Generators
+=== Generators
 
 .Python Voorbeelden
 [%collapsible]
@@ -488,3 +490,9 @@ function* numbers(n)
 * Wordt gebruikt in moderne frameworks zoals React
 * Veiliger voor asynchrone code
 * Quasi-noodzakelijk voor gedistribueerde systemen
+
+== Types Oefeningen
+
+* Gebruik van higher order functions
+* Definiëren van higher order functions
+* Herschrijven van stateful naar stateless
