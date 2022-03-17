@@ -483,6 +483,7 @@ function* numbers(n)
 
 == Voordelen
 
+* "Design patterns" voor algoritmes, dwingt extra structuur af
 * Voorkomt veel bugs
 * Gemakkelijker te debuggen
 * Parallelliseerbaar
