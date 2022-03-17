@@ -31,7 +31,7 @@ const ks = [...ns, 4]; // Ok
 ----
 ====
 
-== Aspection
+== Aspects
 
 === Pure Functions
 
