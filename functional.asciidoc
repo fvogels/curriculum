@@ -310,6 +310,28 @@ function findDuplicates(xs)
 * `groupBy`
 * `takeWhile`, `dropWhile`
 
+== Better Algorithm Structure
+
+.Ruby Voorbeelden
+[%collapsible]
+====
+[source,ruby]
+----
+Exam = Struct.new :student, :course, :grade
+
+def format_ranking(exams)
+{
+    exams.groupBy { |exam| exam.student }
+         .transform_values { |exams| exams.map(&:grade).sum / exams.size }
+         .to_a
+         .sort_by { |student, average| average }
+         .first(3)
+         .map { |student, average| "#{student.rjust(10)} #{score}" }
+         .join("\n")
+}
+----
+====
+
 === Lambda Expressions
 
 Een *lambda expression* is een functie zonder naam.
