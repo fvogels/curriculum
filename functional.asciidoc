@@ -126,7 +126,8 @@ IEnumerable<int> DoubleAll(IEnumerable<int> ns)
            select n * 2;
 }
 
-IEnumerable<int> DoubleAllLinq(IEnumerable<int> ns)
+// Alternative syntax
+IEnumerable<int> DoubleAll(IEnumerable<int> ns)
 {
     return ns.Select(n => n * 2);
 }
@@ -162,7 +163,8 @@ IEnumerable<string> NamesOfMen(IEnumerable<Person> people)
            select person.Name;
 }
 
-IEnumerable<string> NamesOfMenLinq(IEnumerable<Person> people)
+// Alternative syntax
+IEnumerable<string> NamesOfMen(IEnumerable<Person> people)
 {
     return people
         .Where(person => person.IsMale)
